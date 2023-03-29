@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   # GET / pages
+  skip_before_action :authenticate_user!, only: %i[home about contact]
+
   def home
   end
 

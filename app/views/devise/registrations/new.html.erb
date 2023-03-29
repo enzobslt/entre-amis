@@ -1,0 +1,60 @@
+<div class="registration-form">
+          <h2 class="signintitle font-rainbows">SIGN UP</h2>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :first_name,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "first_name" }, placeholder: 'Enzo', label: 'First Name' %>
+            <%= f.input :last_name,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "last_name" }, placeholder: 'Boistault', label: 'Last Nname' %>
+            <%= f.input :birthday,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "birthday" }, placeholder: '22/04/2002', label: 'Birthday' %>
+            <%= f.input :phone_number,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "phone_number" }, placeholder: '06 16 64 51 69', label: 'Phone Number' %>
+            <%# <%= f.input :country,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "country" }, placeholder: 'France', label: 'Country' %>
+
+            <%= f.input :address,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "address" }, placeholder: 'Le Plessis pas Brunet', label: 'Address' %>
+            <%= f.input :city,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "city" }, placeholder: 'Nort sur Erdre', label: 'City' %>
+            <%= f.input :zip_code,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "zip_code" }, placeholder: '44390', label: 'Zip_code' %>
+
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }, placeholder: 'user@domain.com', label: 'Email'%>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" }, placeholder: 'your password', label: 'Your Password'%>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" }, placeholder: 'your password', label: 'Confirmed Your Password' %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "GO"%>
+          </div>
+        <% end %>
+</div>
+
+<%= render "devise/shared/links" %>
